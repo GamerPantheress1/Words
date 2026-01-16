@@ -4,7 +4,30 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Word Count Hero – Free Online Word Counter Tool</title>
-  <meta name="description" content="Word Count Hero is a free, accurate online word counter tool that instantly counts words, characters, sentences, paragraphs, and estimates reading time. Improve your writing with expert tips and easy-to-use features." />
+  <meta name="description" content="Word Count Hero — Free, accurate online word counter tool. Instantly count words, characters, sentences, paragraphs, and estimate reading time. Improve your writing with our tool and expert tips." />
+
+  <!-- Structured Data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Word Count Hero",
+    "url": "https://wordcounthero.com/",
+    "description": "Free, accurate online word counter tool that counts words, characters, sentences, paragraphs, and estimates reading time instantly.",
+    "applicationCategory": "WebApplication",
+    "operatingSystem": "Web",
+    "author": {
+      "@type": "Person",
+      "name": "Word Count Hero Team"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+
   <style>
     :root {
       --coral: #DE7356;
@@ -30,44 +53,45 @@
       position: sticky;
       top: 0;
       z-index: 10;
-      text-align: center;
     }
 
     nav {
       max-width: 1100px;
       margin: 0 auto;
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
-      gap: 24px;
-      flex-wrap: nowrap;
-      padding: 8px 0;
+      flex-wrap: wrap;
     }
 
     .logo {
       font-weight: 800;
-      font-size: 24px;
+      font-size: 22px;
       color: var(--coral);
       cursor: pointer;
       user-select: none;
-      flex: 0 0 auto;
+      text-align: center;
+      flex: 1 1 100%;
     }
 
     nav div.links {
       display: flex;
       gap: 20px;
-      flex-wrap: nowrap;
-      flex: 1 1 auto;
+      flex-wrap: wrap;
+      margin-top: 8px;
       justify-content: center;
+      flex: 1 1 100%;
     }
 
     nav a {
       text-decoration: none;
       color: var(--text);
-      font-weight: 600;
+      font-weight: 500;
       cursor: pointer;
       font-size: 16px;
       white-space: nowrap;
+      flex: 1 1 auto;
+      text-align: center;
     }
 
     nav a:hover {
@@ -83,40 +107,15 @@
     section { display: none; }
     section.active { display: block; }
 
-    h1, h2, h3 {
-      margin-top: 0;
-      color: #1f1f1f;
-      font-weight: 700;
-      line-height: 1.2;
-    }
-
-    h1 {
-      font-size: 2.6rem;
-    }
-
-    h2 {
-      font-size: 1.8rem;
-      margin-bottom: 0.5em;
-    }
-
-    h3 {
-      font-size: 1.3rem;
-      margin-bottom: 0.3em;
-    }
-
-    p {
-      font-size: 1.1rem;
-      margin-bottom: 1em;
-      color: var(--text);
-      max-width: 720px;
-    }
+    h1 { margin-top: 0; color: #1f1f1f; }
+    h2 { margin-top: 0; color: #1f1f1f; }
+    h3 { margin-top: 0; color: #1f1f1f; }
 
     .tool-box {
       background: var(--white);
       border-radius: 18px;
       padding: 28px;
       box-shadow: 0 12px 32px rgba(0,0,0,0.06);
-      margin-bottom: 24px;
     }
 
     textarea {
@@ -207,31 +206,25 @@
       user-select: none;
     }
 
-    /* Mobile styling */
+    /* Mobile adjustments */
     @media (max-width: 768px) {
-      .stats {
-        grid-template-columns: repeat(3, 1fr) !important;
-        gap: 16px;
-      }
-      .card-grid {
-        grid-template-columns: 1fr !important;
-        gap: 16px;
-      }
-      textarea {
-        font-size: 14px;
-        padding: 12px;
-      }
       nav {
         flex-direction: column;
         gap: 8px;
         padding: 0;
+        align-items: center;
       }
       nav div.links {
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
         justify-content: center;
         gap: 16px;
         width: 100%;
         order: 2;
+      }
+      nav a {
+        flex: 1 1 45%;
+        text-align: center;
+        white-space: normal;
       }
       .logo {
         font-size: 28px;
@@ -241,15 +234,30 @@
         text-align: center;
         width: 100%;
       }
-    }
 
+      /* Stats grid for mobile: 2 per row */
+      .stats {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 16px;
+      }
+
+      .card-grid {
+        grid-template-columns: 1fr !important;
+        gap: 16px;
+      }
+
+      textarea {
+        font-size: 14px;
+        padding: 12px;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
     <nav>
-      <div class="logo" onclick="showPage('tool')" aria-label="Go to Home">Word Count Hero</div>
-      <div class="links" role="navigation" aria-label="Primary navigation">
+      <div class="logo" onclick="showPage('tool')">Word Count Hero</div>
+      <div class="links">
         <a href="#" onclick="showPage('tips'); return false;">Writing Tips</a>
         <a href="#" onclick="showPage('how'); return false;">How It Works</a>
         <a href="#" onclick="showPage('pricing'); return false;">Pricing</a>
@@ -259,11 +267,14 @@
   </header>
 
   <main>
-    <section id="tool" class="active" role="main" aria-label="Word Counter Tool">
+    <section id="tool" class="active">
       <h1>Free Online Word Counter Tool</h1>
+      <p style="max-width:600px; margin-bottom: 24px; font-size: 18px; color:#444;">
+        What is Word Count Hero? It’s a fast, easy-to-use online word counter that instantly counts words, characters, sentences, paragraphs, and estimates your reading time. Perfect for writers, bloggers, students, and anyone who needs to track text length and readability.
+      </p>
       <div class="tool-box">
-        <textarea id="textInput" placeholder="Start typing or paste your text here..." aria-label="Text input for word counting"></textarea>
-        <div class="stats" aria-live="polite" aria-atomic="true" aria-relevant="text">
+        <textarea id="textInput" placeholder="Start typing or paste your text here..."></textarea>
+        <div class="stats" aria-label="Text statistics">
           <div class="stat">Words<span id="wordCount">0</span></div>
           <div class="stat">Characters<span id="charCount">0</span></div>
           <div class="stat">No Spaces<span id="noSpaceCount">0</span></div>
@@ -272,88 +283,78 @@
           <div class="stat">Min Read<span id="readTime">0</span></div>
         </div>
       </div>
-
-      <article aria-label="What is Word Count Hero">
-        <h2>What is Word Count Hero?</h2>
-        <p>Word Count Hero is a free, easy-to-use online word counting tool designed to help writers, bloggers, students, and professionals instantly count words, characters, sentences, paragraphs, and estimate reading time. Whether you're writing essays, articles, or creative content, Word Count Hero provides accurate and real-time text analysis to enhance your productivity and writing quality.</p>
-        <p>Unlike complex software, our tool works directly in your browser, ensuring your privacy by processing all data locally without storing or transmitting any text. Improve your writing workflow with instant feedback and expert writing tips—all completely free.</p>
-      </article>
     </section>
 
-    <section id="tips" aria-label="Writing Tips">
+    <section id="tips">
       <h1>Effective Writing Tips for Bloggers & Writers</h1>
       <div class="card-grid">
         <div class="card">
           <h2>Write With Clear Intent</h2>
-          <p>Before you begin writing, clarify your purpose. Knowing your main message helps you stay focused and deliver content that truly resonates with your audience. This approach reduces fluff and strengthens your message’s impact.</p>
+          <p>Before you begin writing, take a moment to clarify your purpose. Ask yourself: What is the main message or action I want the reader to take away? Clear intent keeps your writing focused and purposeful, helping you avoid unnecessary tangents or filler content.</p>
         </div>
         <div class="card">
           <h2>Prioritize Clarity Over Cleverness</h2>
-          <p>Use straightforward language and simple sentences to ensure your readers easily understand your ideas. Avoid jargon and complex phrasing that can confuse or alienate your audience.</p>
+          <p>While creative language can be engaging, clarity should always come first. Use simple words and straightforward sentences to ensure your message is easily understood. Avoid jargon, complex sentence structures, or ambiguous phrasing that might confuse readers.</p>
         </div>
         <div class="card">
           <h2>Organize Your Thoughts Logically</h2>
-          <p>Structure your content with clear introductions, well-grouped paragraphs, and compelling conclusions. Use headings and lists to guide readers smoothly through your ideas.</p>
+          <p>A well-structured piece guides your reader through your ideas effortlessly. Start with a strong introduction, group related points into clear paragraphs, and finish with a compelling conclusion. Use headings, lists, and transitional phrases to create a smooth flow.</p>
         </div>
         <div class="card">
           <h2>Control Paragraph Length</h2>
-          <p>Short paragraphs improve readability and make your writing more inviting. Aim for 3-5 sentences per paragraph to maintain reader engagement.</p>
+          <p>Break your writing into manageable paragraphs, each focusing on a single idea. This not only improves readability but also helps your readers absorb information without feeling overwhelmed by dense blocks of text.</p>
         </div>
         <div class="card">
           <h2>Edit Relentlessly</h2>
-          <p>Great writing results from careful editing. Remove filler, repetitive words, and unclear phrases. Reading aloud helps identify awkward flow and improve rhythm.</p>
+          <p>Great writing is often the result of careful editing. Remove filler words, repetitive phrases, and anything that doesn’t add value. Read your work aloud to catch awkward phrasing or rhythm issues, then refine until the prose feels polished and tight.</p>
         </div>
         <div class="card">
           <h2>Maintain a Consistent Voice</h2>
-          <p>Choose a tone and style that fit your audience and purpose, and stay consistent throughout your work. A steady voice builds trust and strengthens your message.</p>
-        </div>
-        <div class="card">
-          <h2>Create Linkable Assets</h2>
-          <p>Develop valuable content that others want to reference and link to—like comprehensive guides, unique data, or insightful tips. This boosts SEO by attracting quality backlinks from reputable sites.</p>
+          <p>Your tone and style should remain consistent throughout your writing. Whether formal or casual, professional or conversational, a steady voice helps build trust and makes your content more enjoyable to read.</p>
         </div>
       </div>
     </section>
 
-    <section id="how" aria-label="How It Works">
+    <section id="how">
       <h1>How Word Count Hero Works</h1>
       <ol>
-        <li><strong>Instant Analysis:</strong> Type or paste your text, and see real-time updates on word count, characters, sentences, paragraphs, and estimated reading time.</li>
-        <li><strong>Accurate Metrics:</strong> Our tool uses precise algorithms to count all aspects of your text, helping you track your writing progress effectively.</li>
-        <li><strong>Privacy-Focused:</strong> All text processing happens on your device locally. Your data never leaves your browser, ensuring complete privacy and security.</li>
-        <li><strong>User-Friendly Design:</strong> A clean, distraction-free interface allows you to focus on writing without unnecessary clutter.</li>
-        <li><strong>Free & Unlimited:</strong> Use Word Count Hero without signing up or worrying about limits or fees—it's completely free.</li>
+        <li><strong>Instant Analysis:</strong> As you type or paste your text, the tool updates all statistics in real-time without any delay.</li>
+        <li><strong>Comprehensive Metrics:</strong> It counts words, characters (with and without spaces), sentences, paragraphs, and estimates the minimum reading time based on an average speed of 200 words per minute.</li>
+        <li><strong>Privacy First:</strong> All processing happens locally in your browser. Your text is never sent to a server or stored anywhere.</li>
+        <li><strong>User-Friendly Interface:</strong> Designed with simplicity in mind, so you can focus entirely on your writing without distractions.</li>
+        <li><strong>Accessible and Free:</strong> No signups, subscriptions, or hidden fees. Just a straightforward tool that helps writers improve their work.</li>
       </ol>
 
       <h2>Benefits of Using Word Count Hero</h2>
       <div class="card-grid">
         <div class="card">
           <h3>Boost Writing Efficiency</h3>
-          <p>Instant feedback helps you monitor length and structure, so you meet your writing goals faster and with less guesswork.</p>
+          <p>Get immediate feedback on your text length and structure, helping you stay on track and meet your writing goals faster.</p>
         </div>
         <div class="card">
           <h3>Improve Readability</h3>
-          <p>By tracking sentences and paragraphs, you can optimize content flow and engagement for your readers.</p>
+          <p>By monitoring sentences, paragraphs, and reading time, you can craft content that's easier and more enjoyable for your audience.</p>
         </div>
         <div class="card">
-          <h3>Maintain Focus</h3>
-          <p>A clean interface minimizes distractions, keeping your attention on creating great content.</p>
+          <h3>Maintain Focus on Content</h3>
+          <p>With a clean and distraction-free interface, Word Count Hero keeps you focused on writing without unnecessary clutter.</p>
         </div>
         <div class="card">
           <h3>Protect Your Privacy</h3>
-          <p>Your text is never uploaded or stored—100% processed locally for your peace of mind.</p>
+          <p>Your text is processed entirely on your device, ensuring your work stays private and secure.</p>
         </div>
         <div class="card">
           <h3>Completely Free</h3>
-          <p>Access all features without any cost or hidden subscriptions.</p>
+          <p>No hidden fees or subscriptions. Enjoy unlimited use of all features without any cost.</p>
         </div>
         <div class="card">
           <h3>Easy to Use</h3>
-          <p>No setup required. Just paste or type and watch your writing stats update live.</p>
+          <p>Simply paste or type your text and get instant insights without any complicated setup or sign-in.</p>
         </div>
       </div>
     </section>
 
-    <section id="pricing" aria-label="Pricing">
+    <section id="pricing">
       <div class="card" style="text-align:center;">
         <h1>Pricing</h1>
         <div class="price">$0</div>
@@ -362,20 +363,20 @@
       </div>
     </section>
 
-    <section id="policy" aria-label="Privacy Policy and Terms and Conditions">
+    <section id="policy">
       <div class="card">
         <h1>Privacy Policy & Terms & Conditions</h1>
         <h2>Privacy Policy</h2>
-        <p>At Word Count Hero, your privacy is our top priority. We do not collect, store, or transmit any data you enter. All text analysis is performed locally on your device, ensuring your information remains private and secure.</p>
-        <p>We do not use cookies, trackers, or third-party services that collect personal data.</p>
+        <p>At Word Count Hero, we respect your privacy and are committed to protecting your personal information. This tool does not collect, store, or transmit any data you enter. All text analysis is performed entirely within your browser on your device.</p>
+        <p>We do not use cookies, trackers, or any third-party services that collect data. Your writing remains private and secure at all times.</p>
         <h2>Terms & Conditions</h2>
-        <p>By using Word Count Hero, you agree to the following terms:</p>
+        <p>Welcome to Word Count Hero. By using this tool, you agree to the following terms:</p>
         <ul>
-          <li>The service is provided "as is" without warranties of any kind.</li>
-          <li>We do not collect or store any user data.</li>
-          <li>You are responsible for the content you input and any outcomes from using the tool.</li>
+          <li>This service is provided "as is" without warranties of any kind.</li>
+          <li>We do not collect or store any of your data.</li>
+          <li>You are responsible for the content you enter and any consequences arising from its use.</li>
           <li>We reserve the right to modify or discontinue the service at any time without notice.</li>
-          <li>Use the tool at your own risk.</li>
+          <li>Use this tool at your own risk.</li>
         </ul>
         <p>If you do not agree with these terms, please do not use Word Count Hero.</p>
       </div>
