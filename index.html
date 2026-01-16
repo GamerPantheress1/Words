@@ -3,31 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Word Count Hero – Free Online Word Counter Tool</title>
-  <meta name="description" content="Word Count Hero — Free, accurate online word counter tool. Instantly count words, characters, sentences, paragraphs, and estimate reading time. Improve your writing with our tool and expert tips." />
-
-  <!-- Structured Data for SEO -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Word Count Hero",
-    "url": "https://wordcounthero.com/",
-    "description": "Free, accurate online word counter tool that counts words, characters, sentences, paragraphs, and estimates reading time instantly.",
-    "applicationCategory": "WebApplication",
-    "operatingSystem": "Web",
-    "author": {
-      "@type": "Person",
-      "name": "Word Count Hero Team"
-    },
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    }
-  }
-  </script>
-
+  <title>Word Count Hero – Free Word Counter</title>
   <style>
     :root {
       --coral: #DE7356;
@@ -70,8 +46,6 @@
       color: var(--coral);
       cursor: pointer;
       user-select: none;
-      text-align: center;
-      flex: 1 1 100%;
     }
 
     nav div.links {
@@ -79,8 +53,6 @@
       gap: 20px;
       flex-wrap: wrap;
       margin-top: 8px;
-      justify-content: center;
-      flex: 1 1 100%;
     }
 
     nav a {
@@ -89,9 +61,6 @@
       font-weight: 500;
       cursor: pointer;
       font-size: 16px;
-      white-space: nowrap;
-      flex: 1 1 auto;
-      text-align: center;
     }
 
     nav a:hover {
@@ -125,7 +94,7 @@
       border: 1px solid #ddd;
       padding: 18px;
       font-size: 16px;
-      font-family: inherit;
+      font-family: inherit; /* match site font */
       resize: vertical;
       color: var(--text);
     }
@@ -206,52 +175,38 @@
       user-select: none;
     }
 
-    /* Mobile adjustments */
     @media (max-width: 768px) {
-      nav {
-        flex-direction: column;
-        gap: 8px;
-        padding: 0;
-        align-items: center;
-      }
       nav div.links {
         flex-wrap: wrap;
-        justify-content: center;
         gap: 16px;
-        width: 100%;
-        order: 2;
       }
-      nav a {
-        flex: 1 1 45%;
-        text-align: center;
-        white-space: normal;
-      }
-      .logo {
-        font-size: 28px;
-        order: 1;
-        margin-bottom: 8px;
-        flex: none;
-        text-align: center;
-        width: 100%;
-      }
-
-      /* Stats grid for mobile: 2 per row */
       .stats {
         grid-template-columns: repeat(2, 1fr) !important;
-        gap: 16px;
-      }
-
-      .card-grid {
-        grid-template-columns: 1fr !important;
-        gap: 16px;
-      }
-
-      textarea {
-        font-size: 14px;
-        padding: 12px;
       }
     }
   </style>
+
+  <!-- Structured Data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Word Count Hero",
+    "url": "https://wordcounthero.com/",
+    "description": "Free, accurate online word counter tool that counts words, characters, sentences, paragraphs, and estimates reading time instantly.",
+    "applicationCategory": "WebApplication",
+    "operatingSystem": "Web",
+    "author": {
+      "@type": "Person",
+      "name": "Word Count Hero Team"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
 </head>
 <body>
   <header>
@@ -268,10 +223,7 @@
 
   <main>
     <section id="tool" class="active">
-      <h1>Free Online Word Counter Tool</h1>
-      <p style="max-width:600px; margin-bottom: 24px; font-size: 18px; color:#444;">
-        What is Word Count Hero? It’s a fast, easy-to-use online word counter that instantly counts words, characters, sentences, paragraphs, and estimates your reading time. Perfect for writers, bloggers, students, and anyone who needs to track text length and readability.
-      </p>
+      <h1>Word Counter Tool</h1>
       <div class="tool-box">
         <textarea id="textInput" placeholder="Start typing or paste your text here..."></textarea>
         <div class="stats" aria-label="Text statistics">
@@ -286,7 +238,7 @@
     </section>
 
     <section id="tips">
-      <h1>Effective Writing Tips for Bloggers & Writers</h1>
+      <h1>Writing Tips</h1>
       <div class="card-grid">
         <div class="card">
           <h2>Write With Clear Intent</h2>
