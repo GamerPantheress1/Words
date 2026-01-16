@@ -3,24 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Word Count Hero – Free Online Word Counter Tool</title>
-  <meta name="description" content="Word Count Hero is a free, accurate online word counter tool that instantly counts words, characters, sentences, paragraphs, and estimates reading time. Improve your writing with expert tips and easy-to-use features." />
 
+  <title>Word Count Hero – Free Online Word Counter Tool</title>
+  <meta name="description" content="Word Count Hero is a free online word counter that instantly counts words, characters, characters without spaces, sentences, paragraphs, and reading time. Accurate, private, and SEO-friendly." />
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦸</text></svg>">
+
+  <!-- Schema.org -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "Word Count Hero",
-    "url": "https://wordcounthero.com",
-    "description": "Word Count Hero is a free, easy-to-use online word counting tool that instantly counts words, characters, sentences, paragraphs, and estimates reading time.",
     "applicationCategory": "ProductivityApplication",
-    "operatingSystem": "Web",
-    "browserRequirements": "Requires a modern web browser with JavaScript enabled.",
+    "operatingSystem": "All",
     "offers": {
       "@type": "Offer",
       "price": "0",
       "priceCurrency": "USD"
-    }
+    },
+    "description": "A free online word counter tool that counts words, characters, sentences, paragraphs, and reading time instantly."
   }
   </script>
 
@@ -36,7 +39,7 @@
 
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       background: var(--beige);
       color: var(--text);
       line-height: 1.65;
@@ -45,393 +48,242 @@
     header {
       background: var(--white);
       border-bottom: 1px solid #eee;
-      padding: 16px 24px;
+      padding: 16px;
       position: sticky;
       top: 0;
       z-index: 10;
-      text-align: center;
     }
 
     nav {
       max-width: 1100px;
       margin: 0 auto;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
-      gap: 24px;
-      flex-wrap: nowrap;
-      padding: 8px 0;
+      gap: 10px;
     }
 
     .logo {
       font-weight: 800;
-      font-size: 24px;
+      font-size: 28px;
       color: var(--coral);
       cursor: pointer;
-      user-select: none;
-      flex: 0 0 auto;
+      text-align: center;
     }
 
-    nav div.links {
-      display: flex;
-      gap: 20px;
-      flex-wrap: nowrap;
-      flex: 1 1 auto;
+    .links {
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+      gap: 12px 24px;
       justify-content: center;
     }
 
-    nav a {
+    .links a {
       text-decoration: none;
       color: var(--text);
       font-weight: 600;
-      cursor: pointer;
-      font-size: 16px;
-      white-space: nowrap;
+      font-size: 15px;
     }
 
-    nav a:hover {
+    .links a:hover {
       color: var(--coral);
     }
 
     main {
       max-width: 1100px;
-      margin: 40px auto;
-      padding: 0 24px;
+      margin: 32px auto;
+      padding: 0 20px;
     }
 
     section { display: none; }
     section.active { display: block; }
 
-    h1, h2, h3 {
-      margin-top: 0;
-      color: #1f1f1f;
-      font-weight: 700;
-      line-height: 1.2;
-    }
-
     h1 {
-      font-size: 2.6rem;
+      font-size: 2.2rem;
+      margin-bottom: 16px;
+      text-align: center;
     }
 
     h2 {
-      font-size: 1.8rem;
-      margin-bottom: 0.5em;
-    }
-
-    h3 {
-      font-size: 1.3rem;
-      margin-bottom: 0.3em;
+      font-size: 1.6rem;
+      margin-top: 32px;
     }
 
     p {
-      font-size: 1.1rem;
-      margin-bottom: 1em;
-      color: var(--text);
       max-width: 720px;
+      margin-bottom: 16px;
+      font-size: 1.05rem;
     }
 
     .tool-box {
       background: var(--white);
       border-radius: 18px;
-      padding: 28px;
+      padding: 22px;
       box-shadow: 0 12px 32px rgba(0,0,0,0.06);
-      margin-bottom: 24px;
     }
 
     textarea {
       width: 100%;
-      min-height: 220px;
+      min-height: 200px;
       border-radius: 14px;
       border: 1px solid #ddd;
-      padding: 18px;
+      padding: 16px;
       font-size: 16px;
-      font-family: inherit;
       resize: vertical;
-      color: var(--text);
     }
 
     .stats {
       display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      gap: 20px;
-      margin-top: 20px;
-      max-width: 100%;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 18px;
     }
 
     .stat {
       background: var(--beige);
       border-radius: 14px;
-      padding: 18px;
+      padding: 14px;
       text-align: center;
       font-weight: 600;
-      font-size: 16px;
-      color: var(--text);
-      user-select: none;
     }
 
     .stat span {
       display: block;
-      font-size: 28px;
+      font-size: 26px;
       font-weight: 800;
       color: var(--coral);
-      margin-top: 6px;
-    }
-
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-      margin-top: 20px;
+      margin-top: 4px;
     }
 
     .card {
       background: var(--white);
       border-radius: 18px;
-      padding: 32px;
+      padding: 28px;
       box-shadow: 0 12px 32px rgba(0,0,0,0.06);
-      color: var(--text);
-      font-size: 16px;
-      line-height: 1.6;
-    }
-
-    .price {
-      font-size: 56px;
-      font-weight: 900;
-      color: var(--coral);
-    }
-
-    ol {
-      padding-left: 1.2em;
-      line-height: 1.6;
-    }
-
-    ol li {
-      margin-bottom: 14px;
-    }
-
-    ul {
-      margin-left: 1.2em;
-      line-height: 1.6;
-    }
-
-    ul li {
-      margin-bottom: 10px;
+      margin-top: 24px;
     }
 
     footer {
       text-align: center;
-      padding: 50px 20px;
+      padding: 40px 16px;
       color: #777;
       font-size: 14px;
-      user-select: none;
     }
 
-    /* Mobile styling */
-    @media (max-width: 768px) {
-      .stats {
-        grid-template-columns: repeat(3, 1fr) !important;
-        gap: 16px;
-      }
-      .card-grid {
-        grid-template-columns: 1fr !important;
-        gap: 16px;
-      }
-      textarea {
-        font-size: 14px;
-        padding: 12px;
-      }
+    /* Desktop enhancements only (does NOT break mobile) */
+    @media (min-width: 900px) {
       nav {
-        flex-direction: column;
-        gap: 8px;
-        padding: 0;
+        flex-direction: row;
+        justify-content: space-between;
       }
-      nav div.links {
-        flex-wrap: nowrap;
-        justify-content: center;
-        gap: 16px;
-        width: 100%;
-        order: 2;
+      .links {
+        display: flex;
+        gap: 24px;
       }
-      .logo {
-        font-size: 28px;
-        order: 1;
-        margin-bottom: 8px;
-        flex: none;
-        text-align: center;
-        width: 100%;
+      .stats {
+        grid-template-columns: repeat(6, 1fr);
+      }
+      h1 {
+        text-align: left;
       }
     }
-
   </style>
 </head>
+
 <body>
-  <header>
-    <nav>
-      <div class="logo" onclick="showPage('tool')" aria-label="Go to Home">Word Count Hero</div>
-      <div class="links" role="navigation" aria-label="Primary navigation">
-        <a href="#" onclick="showPage('tips'); return false;">Writing Tips</a>
-        <a href="#" onclick="showPage('how'); return false;">How It Works</a>
-        <a href="#" onclick="showPage('pricing'); return false;">Pricing</a>
-        <a href="#" onclick="showPage('policy'); return false;">Privacy & Terms</a>
-      </div>
-    </nav>
-  </header>
 
-  <main>
-    <section id="tool" class="active" role="main" aria-label="Word Counter Tool">
-      <h1>Free Online Word Counter Tool</h1>
-      <div class="tool-box">
-        <textarea id="textInput" placeholder="Start typing or paste your text here..." aria-label="Text input for word counting"></textarea>
-        <div class="stats" aria-live="polite" aria-atomic="true" aria-relevant="text">
-          <div class="stat">Words<span id="wordCount">0</span></div>
-          <div class="stat">Characters<span id="charCount">0</span></div>
-          <div class="stat">No Spaces<span id="noSpaceCount">0</span></div>
-          <div class="stat">Sentences<span id="sentenceCount">0</span></div>
-          <div class="stat">Paragraphs<span id="paragraphCount">0</span></div>
-          <div class="stat">Min Read<span id="readTime">0</span></div>
-        </div>
-      </div>
+<header>
+  <nav>
+    <div class="logo" onclick="showPage('tool')">Word Count Hero</div>
+    <div class="links">
+      <a href="#" onclick="showPage('tool');return false;">Tool</a>
+      <a href="#" onclick="showPage('tips');return false;">Writing Tips</a>
+      <a href="#" onclick="showPage('how');return false;">How It Works</a>
+      <a href="#" onclick="showPage('policy');return false;">Privacy</a>
+    </div>
+  </nav>
+</header>
 
-      <article aria-label="What is Word Count Hero">
-        <h2>What is Word Count Hero?</h2>
-        <p>Word Count Hero is a free, easy-to-use online word counting tool designed to help writers, bloggers, students, and professionals instantly count words, characters, sentences, paragraphs, and estimate reading time. Whether you're writing essays, articles, or creative content, Word Count Hero provides accurate and real-time text analysis to enhance your productivity and writing quality.</p>
-        <p>Unlike complex software, our tool works directly in your browser, ensuring your privacy by processing all data locally without storing or transmitting any text. Improve your writing workflow with instant feedback and expert writing tips—all completely free.</p>
-      </article>
-    </section>
+<main>
 
-    <section id="tips" aria-label="Writing Tips">
-      <h1>Effective Writing Tips for Bloggers & Writers</h1>
-      <div class="card-grid">
-        <div class="card">
-          <h2>Write With Clear Intent</h2>
-          <p>Before you begin writing, clarify your purpose. Knowing your main message helps you stay focused and deliver content that truly resonates with your audience. This approach reduces fluff and strengthens your message’s impact.</p>
-        </div>
-        <div class="card">
-          <h2>Prioritize Clarity Over Cleverness</h2>
-          <p>Use straightforward language and simple sentences to ensure your readers easily understand your ideas. Avoid jargon and complex phrasing that can confuse or alienate your audience.</p>
-        </div>
-        <div class="card">
-          <h2>Organize Your Thoughts Logically</h2>
-          <p>Structure your content with clear introductions, well-grouped paragraphs, and compelling conclusions. Use headings and lists to guide readers smoothly through your ideas.</p>
-        </div>
-        <div class="card">
-          <h2>Control Paragraph Length</h2>
-          <p>Short paragraphs improve readability and make your writing more inviting. Aim for 3-5 sentences per paragraph to maintain reader engagement.</p>
-        </div>
-        <div class="card">
-          <h2>Edit Relentlessly</h2>
-          <p>Great writing results from careful editing. Remove filler, repetitive words, and unclear phrases. Reading aloud helps identify awkward flow and improve rhythm.</p>
-        </div>
-        <div class="card">
-          <h2>Maintain a Consistent Voice</h2>
-          <p>Choose a tone and style that fit your audience and purpose, and stay consistent throughout your work. A steady voice builds trust and strengthens your message.</p>
-        </div>
-        <div class="card">
-          <h2>Create Linkable Assets</h2>
-          <p>Develop valuable content that others want to reference and link to—like comprehensive guides, unique data, or insightful tips. This boosts SEO by attracting quality backlinks from reputable sites.</p>
-        </div>
-      </div>
-    </section>
+<section id="tool" class="active">
+  <h1>Free Online Word Counter</h1>
 
-    <section id="how" aria-label="How It Works">
-      <h1>How Word Count Hero Works</h1>
-      <ol>
-        <li><strong>Instant Analysis:</strong> Type or paste your text, and see real-time updates on word count, characters, sentences, paragraphs, and estimated reading time.</li>
-        <li><strong>Accurate Metrics:</strong> Our tool uses precise algorithms to count all aspects of your text, helping you track your writing progress effectively.</li>
-        <li><strong>Privacy-Focused:</strong> All text processing happens on your device locally. Your data never leaves your browser, ensuring complete privacy and security.</li>
-        <li><strong>User-Friendly Design:</strong> A clean, distraction-free interface allows you to focus on writing without unnecessary clutter.</li>
-        <li><strong>Free & Unlimited:</strong> Use Word Count Hero without signing up or worrying about limits or fees—it's completely free.</li>
-      </ol>
+  <div class="tool-box">
+    <textarea id="textInput" placeholder="Type or paste your text here..."></textarea>
 
-      <h2>Benefits of Using Word Count Hero</h2>
-      <div class="card-grid">
-        <div class="card">
-          <h3>Boost Writing Efficiency</h3>
-          <p>Instant feedback helps you monitor length and structure, so you meet your writing goals faster and with less guesswork.</p>
-        </div>
-        <div class="card">
-          <h3>Improve Readability</h3>
-          <p>By tracking sentences and paragraphs, you can optimize content flow and engagement for your readers.</p>
-        </div>
-        <div class="card">
-          <h3>Maintain Focus</h3>
-          <p>A clean interface minimizes distractions, keeping your attention on creating great content.</p>
-        </div>
-        <div class="card">
-          <h3>Protect Your Privacy</h3>
-          <p>Your text is never uploaded or stored—100% processed locally for your peace of mind.</p>
-        </div>
-        <div class="card">
-          <h3>Completely Free</h3>
-          <p>Access all features without any cost or hidden subscriptions.</p>
-        </div>
-        <div class="card">
-          <h3>Easy to Use</h3>
-          <p>No setup required. Just paste or type and watch your writing stats update live.</p>
-        </div>
-      </div>
-    </section>
+    <div class="stats">
+      <div class="stat">Words<span id="wordCount">0</span></div>
+      <div class="stat">Characters<span id="charCount">0</span></div>
+      <div class="stat">No Spaces<span id="noSpaceCount">0</span></div>
+      <div class="stat">Sentences<span id="sentenceCount">0</span></div>
+      <div class="stat">Paragraphs<span id="paragraphCount">0</span></div>
+      <div class="stat">Min Read<span id="readTime">0</span></div>
+    </div>
+  </div>
 
-    <section id="pricing" aria-label="Pricing">
-      <div class="card" style="text-align:center;">
-        <h1>Pricing</h1>
-        <div class="price">$0</div>
-        <p>Word Count Hero is completely free to use. No subscriptions, no hidden costs.</p>
-        <p>Enjoy all features at zero cost, forever.</p>
-      </div>
-    </section>
+  <div class="card">
+    <h2>What is Word Count Hero?</h2>
+    <p>Word Count Hero is a free online word counter tool that instantly counts words, characters (with and without spaces), sentences, paragraphs, and reading time. It’s designed for writers, bloggers, students, and SEO professionals who need fast and accurate text analysis.</p>
+    <p>All processing happens locally in your browser. Your text is never uploaded, stored, or tracked.</p>
+  </div>
+</section>
 
-    <section id="policy" aria-label="Privacy Policy and Terms and Conditions">
-      <div class="card">
-        <h1>Privacy Policy & Terms & Conditions</h1>
-        <h2>Privacy Policy</h2>
-        <p>At Word Count Hero, your privacy is our top priority. We do not collect, store, or transmit any data you enter. All text analysis is performed locally on your device, ensuring your information remains private and secure.</p>
-        <p>We do not use cookies, trackers, or third-party services that collect personal data.</p>
-        <h2>Terms & Conditions</h2>
-        <p>By using Word Count Hero, you agree to the following terms:</p>
-        <ul>
-          <li>The service is provided "as is" without warranties of any kind.</li>
-          <li>We do not collect or store any user data.</li>
-          <li>You are responsible for the content you input and any outcomes from using the tool.</li>
-          <li>We reserve the right to modify or discontinue the service at any time without notice.</li>
-          <li>Use the tool at your own risk.</li>
-        </ul>
-        <p>If you do not agree with these terms, please do not use Word Count Hero.</p>
-      </div>
-    </section>
-  </main>
+<section id="tips">
+  <h1>Writing Tips</h1>
+  <div class="card">
+    <p>Clear writing starts with structure. Use short paragraphs, direct language, and logical flow. Tools like Word Count Hero help you stay within ideal word counts for SEO, readability, and user engagement.</p>
+  </div>
+</section>
 
-  <footer>
-    © 2026 Word Count Hero. Write freely.
-  </footer>
+<section id="how">
+  <h1>How It Works</h1>
+  <div class="card">
+    <p>As you type or paste text, Word Count Hero analyzes it in real time using lightweight JavaScript. Counts update instantly with no delay and no data sent anywhere.</p>
+  </div>
+</section>
 
-  <script>
-    const input = document.getElementById('textInput');
-    const wordCount = document.getElementById('wordCount');
-    const charCount = document.getElementById('charCount');
-    const noSpaceCount = document.getElementById('noSpaceCount');
-    const sentenceCount = document.getElementById('sentenceCount');
-    const paragraphCount = document.getElementById('paragraphCount');
-    const readTime = document.getElementById('readTime');
+<section id="policy">
+  <h1>Privacy Policy</h1>
+  <div class="card">
+    <p>We do not collect, store, or transmit any user data. No cookies. No tracking. Everything runs locally.</p>
+  </div>
+</section>
 
-    input.addEventListener('input', () => {
-      const raw = input.value;
-      const text = raw.trim();
-      const words = text ? text.split(/\s+/).length : 0;
+</main>
 
-      wordCount.textContent = words;
-      charCount.textContent = raw.length;
-      noSpaceCount.textContent = raw.replace(/\s/g, '').length;
-      sentenceCount.textContent = text ? text.split(/[.!?]+/).filter(Boolean).length : 0;
-      paragraphCount.textContent = text ? text.split(/\n+/).filter(p => p.trim()).length : 0;
-      readTime.textContent = words ? Math.max(1, Math.ceil(words / 200)) : 0;
-    });
+<footer>
+  © 2026 Word Count Hero
+</footer>
 
-    function showPage(id) {
-      document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
-      document.getElementById(id).classList.add('active');
-      window.scrollTo(0, 0);
-    }
-  </script>
+<script>
+  const input = document.getElementById('textInput');
+  const wordCount = document.getElementById('wordCount');
+  const charCount = document.getElementById('charCount');
+  const noSpaceCount = document.getElementById('noSpaceCount');
+  const sentenceCount = document.getElementById('sentenceCount');
+  const paragraphCount = document.getElementById('paragraphCount');
+  const readTime = document.getElementById('readTime');
+
+  input.addEventListener('input', () => {
+    const raw = input.value;
+    const text = raw.trim();
+    const words = text ? text.split(/\s+/).length : 0;
+
+    wordCount.textContent = words;
+    charCount.textContent = raw.length;
+    noSpaceCount.textContent = raw.replace(/\s/g, '').length;
+    sentenceCount.textContent = text ? text.split(/[.!?]+/).filter(Boolean).length : 0;
+    paragraphCount.textContent = text ? text.split(/\n+/).filter(p => p.trim()).length : 0;
+    readTime.textContent = words ? Math.max(1, Math.ceil(words / 200)) : 0;
+  });
+
+  function showPage(id) {
+    document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    window.scrollTo(0,0);
+  }
+</script>
+
 </body>
 </html>
