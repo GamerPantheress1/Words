@@ -7,7 +7,6 @@
   <title>Word Count Hero – Free Online Word Counter Tool</title>
   <meta name="description" content="Word Count Hero is a free online word counter that instantly counts words, characters with and without spaces, sentences, paragraphs, and reading time. Built for writers, bloggers, students, and professionals." />
 
-  <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png">
 
   <!-- Schema.org -->
@@ -23,7 +22,7 @@
       "price": "0",
       "priceCurrency": "USD"
     },
-    "description": "A free online word counter tool that counts words, characters, sentences, paragraphs, and reading time instantly."
+    "description": "A free online word counter that counts words, characters, sentences, paragraphs, and reading time instantly."
   }
   </script>
 
@@ -69,7 +68,6 @@
       font-size: 22px;
       color: var(--coral);
       cursor: pointer;
-      user-select: none;
     }
 
     .links {
@@ -96,10 +94,7 @@
     section { display: none; }
     section.active { display: block; }
 
-    h1, h2, h3 {
-      color: #1f1f1f;
-      margin-top: 0;
-    }
+    h1, h2, h3 { color: #1f1f1f; }
 
     .tool-box {
       background: var(--white);
@@ -170,24 +165,12 @@
       font-size: 14px;
     }
 
-    /* MOBILE – layout only, NO content changes */
+    /* Mobile – layout only */
     @media (max-width: 768px) {
-      nav {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .links {
-        justify-content: center;
-      }
-
-      .stats {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .card-grid {
-        grid-template-columns: 1fr;
-      }
+      nav { flex-direction: column; align-items: center; }
+      .links { justify-content: center; }
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .card-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -224,45 +207,52 @@
   </div>
 
   <h2>What is Word Count Hero?</h2>
-  <p>Word Count Hero is a free online word counter built for writers, bloggers, students, and professionals who need accurate, instant text statistics. It counts words, characters with and without spaces, sentences, paragraphs, and estimates reading time in real time.</p>
-  <p>All analysis happens locally in your browser. No data is collected, stored, or transmitted.</p>
+  <p>Word Count Hero is a free online writing tool designed to help writers, students, bloggers, marketers, and professionals analyze text instantly. It provides accurate word counts, character counts with and without spaces, sentence totals, paragraph counts, and estimated reading time.</p>
+  <p>All text analysis happens locally in your browser. Your content is never stored, tracked, or transmitted.</p>
 </section>
 
 <section id="tips">
-  <h1>Writing Tips</h1>
+  <h1>Professional Writing Tips</h1>
   <div class="card-grid">
-    <div class="card"><h3>Write With Intent</h3><p>Know your purpose before you write. Clear intent leads to focused, impactful content.</p></div>
-    <div class="card"><h3>Clarity Beats Cleverness</h3><p>Simple language improves understanding and keeps readers engaged.</p></div>
-    <div class="card"><h3>Structure Matters</h3><p>Use paragraphs, headings, and logical flow to guide readers.</p></div>
-    <div class="card"><h3>Edit Ruthlessly</h3><p>Remove filler words and tighten sentences for stronger writing.</p></div>
-    <div class="card"><h3>Consistent Voice</h3><p>Maintain a steady tone to build trust and readability.</p></div>
-    <div class="card"><h3>Create Linkable Content</h3><p>High-quality guides and tools naturally earn backlinks.</p></div>
+    <div class="card"><h3>Write With Purpose</h3><p>Always begin with a clear goal. Purpose-driven writing keeps your content focused, persuasive, and valuable to readers.</p></div>
+    <div class="card"><h3>Clarity Over Complexity</h3><p>Simple language increases comprehension. Avoid unnecessary jargon and keep sentences concise.</p></div>
+    <div class="card"><h3>Strong Structure</h3><p>Organize ideas logically with headings, paragraphs, and transitions to guide readers smoothly.</p></div>
+    <div class="card"><h3>Paragraph Control</h3><p>Shorter paragraphs improve readability, especially on mobile devices.</p></div>
+    <div class="card"><h3>Edit Aggressively</h3><p>Remove filler words, tighten phrasing, and refine tone to elevate writing quality.</p></div>
+    <div class="card"><h3>Consistency Matters</h3><p>Maintain a consistent voice and style to build trust and authority.</p></div>
   </div>
 </section>
 
 <section id="how">
   <h1>How Word Count Hero Works</h1>
-  <ol>
-    <li>Type or paste text into the editor.</li>
-    <li>Statistics update instantly as you write.</li>
-    <li>Use the metrics to refine clarity and length.</li>
-    <li>Nothing is stored or tracked.</li>
-  </ol>
+  <p>Word Count Hero analyzes text instantly as you type or paste content into the editor. All calculations are performed locally using lightweight JavaScript.</p>
+
+  <div class="card-grid">
+    <div class="card"><h3>Real-Time Analysis</h3><p>Every keystroke updates word counts, character totals, and reading time without delay.</p></div>
+    <div class="card"><h3>Accurate Metrics</h3><p>Counts words, characters with and without spaces, sentences, and paragraphs reliably.</p></div>
+    <div class="card"><h3>Privacy First</h3><p>No data leaves your device. There are no trackers, cookies, or analytics scripts.</p></div>
+    <div class="card"><h3>Zero Cost</h3><p>Unlimited usage with no subscriptions, signups, or restrictions.</p></div>
+  </div>
 </section>
 
 <section id="pricing">
   <div class="card" style="text-align:center;">
     <h1>Pricing</h1>
     <div class="price">$0</div>
-    <p>Completely free. No subscriptions. No limits.</p>
+    <p>Word Count Hero is completely free to use forever.</p>
   </div>
 </section>
 
 <section id="policy">
   <div class="card">
     <h1>Privacy Policy & Terms</h1>
-    <p>No data is collected, stored, or transmitted. All processing happens locally in your browser.</p>
-    <p>This service is provided as-is with no warranties.</p>
+    <h2>Privacy Policy</h2>
+    <p>Word Count Hero does not collect, store, or transmit any personal data or user content. All text processing happens entirely within your browser.</p>
+    <p>No cookies, analytics, tracking pixels, or third-party scripts are used.</p>
+
+    <h2>Terms & Conditions</h2>
+    <p>This tool is provided "as is" without warranties of any kind. By using Word Count Hero, you agree that you are responsible for the content you enter and any outcomes resulting from its use.</p>
+    <p>We reserve the right to update or discontinue the service at any time.</p>
   </div>
 </section>
 
@@ -300,5 +290,6 @@
     window.scrollTo(0,0);
   }
 </script>
+
 </body>
 </html>
