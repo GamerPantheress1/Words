@@ -1,118 +1,98 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-
-<title>Free Word Counter – Count Words in a Paragraph Instantly | Word Count Hero</title>
-
-<meta name="description" content="Count words in a paragraph instantly with this free word count tool. Track words, characters, sentences, and reading time — fast, accurate, and private." />
-
-<!-- Favicon -->
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
-<link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" />
-
-<!-- Stylesheet -->
-<style>
-body{margin:0;font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", system-ui, sans-serif;background:#faf6f2;color:#2b2b2b}header{background:#fff;border-bottom:1px solid #eee;padding:16px 20px}nav{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}.logo{font-weight:800;color:#DE7356;font-size:22px}.nav-links a{text-decoration:none;color:#2b2b2b;font-weight:500;margin-left:12px;transition:color .3s ease}.nav-links a:hover{color:#DE7356}main{max-width:1100px;margin:40px auto;padding:0 20px}.card{background:#fff;border-radius:16px;padding:24px;box-shadow:0 10px 30px rgba(0,0,0,.05)}textarea{width:100%;min-height:220px;padding:16px;border-radius:12px;border:1px solid #ddd;font-size:16px;font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", system-ui, sans-serif;box-sizing:border-box;resize:vertical}textarea::placeholder{font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", system-ui, sans-serif;font-weight:400;color:#999}.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:16px;margin-top:16px}.stat{background:#faf6f2;border-radius:12px;padding:16px;text-align:center}.stat span{display:block;font-size:26px;font-weight:800;color:#DE7356}footer{text-align:center;padding:40px 20px;color:#777}
-</style>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "Word Count Hero",
-  "applicationCategory": "Writing Tool",
-  "operatingSystem": "All",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  }
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #faf6f2; /* Beige background */
+  color: #2b2b2b;
 }
-</script>
-</head>
 
-<body>
-<header>
-  <nav>
-    <div class="logo">
-      <a href="/" style="color:#DE7356; font-weight:800; text-decoration:none;">
-        Word Count Hero
-      </a>
-    </div>
-    <div class="nav-links">
-      <a href="/writing-tips.html">Writing Tips</a>
-      <a href="/how-it-works.html">How It Works</a>
-      <a href="/guides/word-count-guide.html">Guides</a>
-      <a href="/privacy.html">Privacy</a>
-    </div>
-  </nav>
-</header>
+header {
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  padding: 16px 20px;
+}
 
-<main>
-  <h1>Free Word Counter Tool</h1>
+nav {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
 
-  <div class="card">
-    <textarea id="textInput" placeholder="Type or paste your text here..."></textarea>
+.logo {
+  font-weight: 800;
+  color: #DE7356;
+  font-size: 22px;
+}
 
-    <div class="stats" aria-label="Word count statistics">
-      <div class="stat">Words<span id="words">0</span></div>
-      <div class="stat">Characters<span id="chars">0</span></div>
-      <div class="stat">No Spaces<span id="nospace">0</span></div>
-      <div class="stat">Sentences<span id="sentences">0</span></div>
-      <div class="stat">Reading Time<span id="read">0 min</span></div>
-    </div>
-  </div>
+.nav-links a {
+  text-decoration: none;
+  color: #2b2b2b;
+  font-weight: 500;
+  margin-left: 12px;
+  transition: color 0.3s ease;
+}
 
-  <section class="card" style="margin-top:40px">
-    <h2>What Is Word Count Hero?</h2>
+.nav-links a:hover {
+  color: #DE7356;
+}
 
-    <p>
-      Word Count Hero is a free, fast, and reliable online word counter designed to help writers accurately count words in a paragraph, essay, or entire document. Instantly calculate word count, character count (with and without spaces), sentence totals, and estimated reading time with this intuitive word counter.
-    </p>
+main {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
 
-    <h3>Who Uses Word Count Hero?</h3>
-    <p>
-      Whether you are a student working on essays, a blogger crafting posts, an academic writing research papers, or a marketer creating copy, Word Count Hero provides quick and accurate insights for all your writing needs.
-    </p>
+.card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
 
-    <h3>Key Features of Our Word Counter Tool</h3>
-    <ul>
-      <li>Instant word count for paragraphs, essays, and documents</li>
-      <li>Character count with and without spaces</li>
-      <li>Sentence and paragraph analysis</li>
-      <li>Estimated reading time to gauge content length</li>
-      <li>100% privacy — your text never leaves your browser</li>
-    </ul>
+textarea {
+  width: 100%;
+  min-height: 220px;
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  font-family: system-ui, sans-serif;
+  box-sizing: border-box;
+  resize: vertical;
+}
 
-    <h3>Why Word Count Matters</h3>
-    <p>
-      Tracking word count helps you meet assignment requirements, improve readability, and optimize your content for SEO and user engagement. Our tool supports you in maintaining the right length and clarity.
-    </p>
-  </section>
-</main>
+textarea::placeholder {
+  font-family: system-ui, sans-serif;
+  font-weight: normal;
+  color: #999;
+}
 
-<footer>© 2026 Word Count Hero</footer>
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
 
-<script>
-document.addEventListener("DOMContentLoaded", function(){
-  const t = document.getElementById("textInput");
-  const w = document.getElementById("words");
-  const c = document.getElementById("chars");
-  const n = document.getElementById("nospace");
-  const s = document.getElementById("sentences");
-  const r = document.getElementById("read");
+.stat {
+  background: #faf6f2;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+}
 
-  t.addEventListener("input", () => {
-    const text = t.value;
-    w.textContent = text.trim() ? text.trim().split(/\s+/).length : 0;
-    c.textContent = text.length;
-    n.textContent = text.replace(/\s+/g, "").length;
-    s.textContent = text.split(/[.!?]+/).filter(Boolean).length;
-    r.textContent = Math.max(1, Math.ceil(w.textContent / 200)) + " min";
-  });
-});
-</script>
-</body>
-</html>
+.stat span {
+  display: block;
+  font-size: 26px;
+  font-weight: 800;
+  color: #DE7356;
+}
+
+footer {
+  text-align: center;
+  padding: 40px 20px;
+  color: #777;
+}
